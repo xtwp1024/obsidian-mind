@@ -18,9 +18,10 @@ This vault has [obsidian-skills](https://github.com/kepano/obsidian-skills) inst
 |--------|---------|-----------|
 | `work/` | Work notes, project tracking | `Index.md` (MOC) |
 | `perf/` | Performance reviews, brag doc | `Brag Doc.md`, `Review Template.md` |
+| `perf/competencies/` | Atomic competency notes (link targets for work notes) | One note per competency |
 | `claude/` | Claude-facing context | `Memories.md`, `Skills.md`, `North Star.md` |
 | `thinking/` | Claude's scratchpad for drafts and reasoning | Named `YYYY-MM-DD-topic.md` |
-| `templates/` | Obsidian templates | `Work Note.md`, `Decision Record.md`, `Thinking Note.md` |
+| `templates/` | Obsidian templates | `Work Note.md`, `Decision Record.md`, `Thinking Note.md`, `Competency Note.md` |
 
 ## Obsidian CLI
 
@@ -61,6 +62,7 @@ Before wrapping up a session where meaningful work was done:
 3. Update `perf/Brag Doc.md` if wins or impact were achieved
 4. Offer to update `claude/North Star.md` if goals shifted or new focus emerged
 5. Verify all new notes link to at least one existing note
+6. If work demonstrates competencies, add competency links to the work note's `## Related`
 
 Skip steps that don't apply. The goal is transferring durable knowledge from conversation to vault state.
 
@@ -79,10 +81,17 @@ Use `thinking/` for drafts, reasoning, and analysis before writing final notes.
 
 1. **Always use YAML frontmatter** with at minimum `date`, `description` (~150 chars), `tags`, and type-specific fields.
 2. **Use templates** from `templates/`. Fill `{{placeholders}}` with real values.
-3. **Place files correctly**: work notes and decisions in `work/`, drafts in `thinking/`, perf content in `perf/`, Claude context in `claude/`. Nothing in vault root except this file.
+3. **Place files correctly**: work notes and decisions in `work/`, drafts in `thinking/`, perf content in `perf/`, competency notes in `perf/competencies/`, Claude context in `claude/`. Nothing in vault root except this file.
 4. **Name files descriptively.** Use the note title as filename.
 
 ### Linking -- This Is Critical
+
+**Graph principle**: This vault is a graph, not a wiki. A note's value comes from its connections, not its length. Link FROM evidence TO concepts -- never curate evidence lists inside concept notes. Let backlinks do the work.
+
+Note types have graph roles:
+- **Evidence nodes** (work notes, decisions): add outbound links to concepts they demonstrate
+- **Concept nodes** (competencies, patterns): stay definitional -- evidence arrives via backlinks
+- **Index nodes** (Index, Brag Doc, Memories): actively curate links -- they're navigational
 
 Every new note must link to at least one existing note. Proactively suggest connections.
 
@@ -95,7 +104,10 @@ Every new note must link to at least one existing note. Proactively suggest conn
 #### When to Link
 
 - **Work note <-> Decision**: bidirectional links
+- **Work note -> Competency**: in `## Related`, link to competencies demonstrated with a brief annotation (e.g., `[[Competency Name]] -- what was demonstrated`)
 - **Brag Doc -> Work note**: every entry links to evidence
+- **Brag Doc -> Competency**: in `#### Competency Evidence` per quarter, link both competency and evidence work note
+- **Review Template -> Competency + Work note**: per-competency assessment row with evidence links
 - **Memories -> Source**: every memory links to where it was learned
 - **Skills -> Usage**: skills link to notes where used
 - **Index -> Everything**: `work/Index.md` links to all work notes
@@ -135,7 +147,7 @@ When significant work is completed, add to `perf/Brag Doc.md` with links to the 
 
 Use tags in frontmatter (not inline):
 
-- **Type**: `work-note`, `decision`, `claude`, `perf`, `thinking`, `north-star`
+- **Type**: `work-note`, `decision`, `claude`, `perf`, `thinking`, `north-star`, `competency`
 - **Index**: `index`, `moc`
 - **Status** (frontmatter field): `active`, `completed`, `archived`, `proposed`, `accepted`, `deprecated`
 - **Project**: as needed, e.g. `project/my-project`

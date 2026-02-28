@@ -12,6 +12,9 @@ A running log of impact, wins, and growth. Link to work notes as evidence -- bac
 
 ### Q1
 
+#### Competency Evidence
+-
+
 #### Impact & Deliverables
 -
 

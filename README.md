@@ -17,11 +17,12 @@ A ready-to-use vault structure that makes Claude Code productive from session on
 ## Vault Structure
 
 ```
-work/           Work notes, project tracking, decision records
-perf/           Brag doc, performance review templates
-claude/         Claude context: memories, skills, goals (North Star)
-thinking/       Claude's scratchpad for drafts and reasoning
-templates/      Obsidian templates with YAML frontmatter
+work/                  Work notes, project tracking, decision records
+perf/                  Brag doc, performance review templates
+perf/competencies/     One note per competency (link targets for work notes)
+claude/                Claude context: memories, skills, goals (North Star)
+thinking/              Claude's scratchpad for drafts and reasoning
+templates/             Obsidian templates with YAML frontmatter
 ```
 
 ### Key Files
@@ -53,11 +54,12 @@ A hook in `.claude/settings.json` injects the vault file listing into every Clau
 
 ### Templates
 
-Three templates with YAML frontmatter including a `description` field for progressive disclosure:
+Four templates with YAML frontmatter including a `description` field for progressive disclosure:
 
 - **Work Note** — date, description, project, status, tags
 - **Decision Record** — date, description, status (proposed/accepted/deprecated), tags
 - **Thinking Note** — date, description, context, tags
+- **Competency Note** — date, description, current-level, target-level, proficiency table
 
 ### Session Workflow
 
@@ -76,6 +78,18 @@ The vault is built around **wikilinks**. Every note links to related notes, buil
 - The thinking folder links drafts to their final notes
 
 Claude maintains the indexes (`work/Index.md`, `claude/Memories.md`, `perf/Brag Doc.md`) as notes are created, so the graph stays navigable.
+
+## Performance Graph
+
+The vault includes a performance tracking system built on the same graph principles:
+
+- **Competency notes** in `perf/competencies/` represent skills from your organization's competency framework
+- **Work notes** link to competencies in `## Related` — annotated with what was demonstrated
+- **Brag Doc** aggregates evidence per quarter in `#### Competency Evidence` sections
+- **Review Template** structures self-assessment around Impact, Competencies, and Principles
+- **Backlinks accumulate automatically** — review prep becomes reading the backlinks panel on each competency note
+
+To get started: create competency notes using the `Competency Note` template, then link your work notes to them as you complete projects.
 
 ## Customization
 

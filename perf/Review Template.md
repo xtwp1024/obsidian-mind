@@ -11,16 +11,33 @@ tags:
 ## Summary
 One paragraph overview of the period.
 
-## Key Accomplishments
+## Impact -- "What was delivered?"
+
+Key accomplishments linked to work notes.
+
 1.
 2.
 3.
 
-## Areas of Growth
+## Competencies -- "How knowledge and skills were applied"
+
+Per-competency self-assessment. Link to competency notes and work note evidence.
+
+| Competency | Rating | Evidence |
+|------------|--------|----------|
+| | | |
+
+## Principles -- "How delivery happened"
+
+How you embodied your organization's principles. Specific examples.
+
 -
 
-## Goals for Next Period
+## Growth Plan
+
+Areas of growth and goals for next period. Link to competencies to develop.
+
 -
 
-## Evidence & Links
--
+## Related
+- [[Brag Doc]]
