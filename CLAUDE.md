@@ -19,7 +19,7 @@ This vault has [obsidian-skills](https://github.com/kepano/obsidian-skills) inst
 | `work/` | Work notes, project tracking | `Index.md` (MOC) |
 | `perf/` | Performance reviews, brag doc | `Brag Doc.md`, `Review Template.md` |
 | `perf/competencies/` | Atomic competency notes (link targets for work notes) | One note per competency |
-| `claude/` | Claude-facing context | `Memories.md`, `Skills.md`, `North Star.md` |
+| `claude/` | Claude-facing context | `Memories.md` (index), topic memory notes, `Skills.md`, `North Star.md` |
 | `thinking/` | Claude's scratchpad for drafts and reasoning | Named `YYYY-MM-DD-topic.md` |
 | `templates/` | Obsidian templates | `Work Note.md`, `Decision Record.md`, `Thinking Note.md`, `Competency Note.md` |
 
@@ -50,7 +50,7 @@ A SessionStart hook automatically injects the vault file listing into context. N
 
 1. Read `claude/North Star.md` -- ground suggestions in current goals
 2. Check `work/Index.md` -- see active projects and recent notes
-3. Scan `claude/Memories.md` -- relevant context for the task
+3. Scan `claude/Memories.md` -- index of memory topics, then read relevant topic notes
 4. `obsidian tasks daily todo` -- see pending items
 
 ### Ending a Substantial Session
@@ -58,7 +58,7 @@ A SessionStart hook automatically injects the vault file listing into context. N
 Before wrapping up a session where meaningful work was done:
 
 1. Update `work/Index.md` if new notes or decisions were created
-2. Update `claude/Memories.md` with key learnings or decisions worth recalling
+2. Update the relevant memory topic note (not `Memories.md` itself) with key learnings
 3. Update `perf/Brag Doc.md` if wins or impact were achieved
 4. Offer to update `claude/North Star.md` if goals shifted or new focus emerged
 5. Verify all new notes link to at least one existing note
@@ -88,7 +88,7 @@ Use `thinking/` for drafts, reasoning, and analysis before writing final notes. 
 
 **Graph principle**: This vault is a graph, not a wiki. A note's value comes from its connections, not its length. Link FROM evidence TO concepts -- never curate evidence lists inside concept notes. Let backlinks do the work.
 
-**Atomicity rule**: Before writing any note, ask: "Does this cover multiple distinct concepts that could be separate nodes?" If a note would have 3+ independent sections that don't need each other to make sense, split into atomic notes that link to each other. A graph of small, connected nodes is more useful than a document with internal headings.
+**Atomicity rule**: Before writing or appending to any note, ask: "Does this cover multiple distinct concepts that could be separate nodes?" If a note has or would have 3+ independent sections that don't need each other to make sense, split into atomic notes that link to each other. A graph of small, connected nodes is more useful than a document with internal headings. This applies equally to creating new notes AND growing existing ones — when an existing note outgrows its original scope, split it.
 
 Note types have graph roles:
 - **Evidence nodes** (work notes, decisions): add outbound links to concepts they demonstrate
@@ -121,7 +121,7 @@ Every new note must link to at least one existing note. Proactively suggest conn
 Update these when creating or archiving notes:
 
 - **`work/Index.md`** -- add to Active Projects or Recent Notes, move completed to Archive, keep Decisions Log current
-- **`claude/Memories.md`** -- add memories with links to source, remove outdated ones
+- **`claude/Memories.md`** -- index of memory topics. Add new memories to the relevant topic note, not here.
 - **`claude/Skills.md`** -- register vault-specific workflows (not obsidian-skills -- those are in `.claude/skills/`)
 - **`perf/Brag Doc.md`** -- log wins with links to evidence, add new quarters as needed
 
@@ -130,7 +130,7 @@ Update these when creating or archiving notes:
 1. Create in `work/` using the Decision Record template
 2. Link from the work note(s) that led to the decision
 3. Add to the Decisions Log table in `work/Index.md`
-4. If significant, note in `claude/Memories.md`
+4. If significant, note in the relevant memory topic note
 
 ### Wins & Achievements
 
@@ -159,7 +159,7 @@ Use tags in frontmatter (not inline):
 | System | Location | Purpose |
 |--------|----------|---------|
 | **Claude Code memory** | `~/.claude/` | Auto-loaded. Workflow prefs, quick-recall. |
-| **Vault memories** | `claude/Memories.md` | Part of the graph. Rich, linked knowledge. |
+| **Vault memories** | `claude/Memories.md` + topic notes | Part of the graph. Rich, linked knowledge. |
 
 Claude Code memory for session-level preferences. Vault memories for knowledge that benefits from linking and Obsidian browsing.
 
@@ -168,7 +168,7 @@ Claude Code memory for session-level preferences. Vault memories for knowledge t
 - Never modify `.obsidian/` config files unless explicitly asked.
 - Preserve existing frontmatter when editing notes.
 - Don't configure git hooks or auto-commit unless the user asks. Sync is handled outside Claude.
-- When asked to "remember" something, write to `claude/Memories.md` with a link to context.
+- When asked to "remember" something, write to the relevant memory topic note (not `Memories.md` itself) with a link to context.
 - Prefer Obsidian CLI over filesystem when Obsidian is running.
 - Follow obsidian-skills conventions for all Obsidian file types.
 - Always check for and suggest connections between notes.
