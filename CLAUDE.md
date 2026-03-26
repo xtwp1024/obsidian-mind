@@ -26,6 +26,8 @@ Defined in `.claude/commands/`. See [[Skills]] for full documentation.
 | `/incident-capture` | Capture incident from Slack channels/DMs into structured vault notes |
 | `/project-archive` | Move completed project from active/ to archive/, update indexes |
 | `/wrap-up` | Full session review -- verify notes, indexes, links, suggest improvements |
+| `/dump` | Freeform capture -- dump anything, gets routed to the right notes |
+| `/standup` | Morning kickoff -- load context, review yesterday, surface tasks, priorities |
 
 ## Vault Structure
 

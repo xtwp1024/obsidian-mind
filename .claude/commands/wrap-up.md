@@ -10,6 +10,10 @@ Full session review before ending. Review context, ways of working, files modifi
 
 Triggered when the user says "wrap up", "let's wrap", "wrapping up", or similar. Claude should invoke this automatically.
 
+## Subagent
+
+- **`brag-spotter`** — run at the end to find uncaptured wins and competency gaps from the session
+
 ## Workflow
 
 ### 1. Review What Was Done

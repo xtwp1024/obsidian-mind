@@ -10,6 +10,14 @@ Capture an incident from Slack channels, DMs, and threads into structured vault 
 
 Provide one or more Slack URLs: incident channels, DM conversations, threads. The more context, the better.
 
+## Subagents
+
+This command orchestrates two subagents for heavy lifting:
+- **`slack-archaeologist`** — reads all Slack sources, builds unified timeline with attribution
+- **`people-profiler`** — bulk creates/updates person notes for everyone involved
+
+Launch both in parallel when starting the capture.
+
 ## Workflow
 
 ### 1. Gather Raw Data
@@ -31,7 +39,7 @@ For every person who posted or was mentioned:
 ### 3. Build the Timeline
 
 Reconstruct a detailed timeline from all sources:
-- Every message with exact timestamp (local timezone)
+- Every message with exact timestamp (CET)
 - Attribution: who said/did what
 - Cross-reference between channels (same person posting in incident channel + DMs)
 - Key moments: first report, incident declared, root cause identified, fix created, fix merged, resolution confirmed
@@ -47,9 +55,9 @@ quarter: QN-YYYY
 description: "~150 chars"
 project: <relevant project>
 status: active
-irp: XXXX
+irp: IRP-XXXX
 severity: high/medium/low
-role: <your role>
+role: <Brenno's role>
 tags:
   - work-note
   - incident
@@ -63,7 +71,7 @@ Sections:
 - **Timeline** — full detailed table with timestamps
 - **Impact** — users affected, business impact
 - **Involved Personnel** — with wikilinks to person notes
-- **Notes** — key actions by you, analysis
+- **Notes** — key actions by Brenno, analysis
 - **Analysis** — what this means strategically (pattern, visibility, competencies)
 - **Related** — wikilinks to all related notes, competencies
 
@@ -85,19 +93,19 @@ For existing people notes:
 - `perf/Brag Doc.md` — add to relevant quarter with competency links
 - `perf/brag/QN YYYY.md` — add detailed brag entry
 
-### 7. Prepare Post-Mortem Draft (if applicable)
+### 7. Prepare IRP Draft (if applicable)
 
-If you are or may become the post-mortem manager:
-- Check your org's post-mortem template
-- Create `work/incidents/<Ticket> Post-Mortem Draft.md` following your org's post-mortem template
+If Brenno is or may become the post-mortem manager:
+- Check the IRP template at `reference/Incident Response Process.md`
+- Create `work/incidents/IRP-XXXX Post-Mortem Draft.md` following the Lifecycle template
 - Include: Executive Summary, Narrative Timeline (4-column), 5 Whys analysis, Action Items table
 
 ### 8. Offer Next Steps
 
 After capturing, suggest:
-- "Want me to prepare the incident tracking system fields?" (Points of Time, Impact, RCA)
+- "Want me to prepare the Jira IRP fields?" (Points of Time, Impact, RCA)
 - "Want me to draft a message for the incident channel?"
-- "Want me to create a root cause analysis document?"
+- "Want me to create an FE/iOS root cause analysis document?"
 - "Should I run `/vault-audit` to verify everything links properly?"
 
 ## Important

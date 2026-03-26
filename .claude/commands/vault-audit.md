@@ -10,6 +10,14 @@ Deep structural audit of the vault. Checks indexes, folder placement, frontmatte
 /vault-audit
 ```
 
+## Subagents
+
+This command orchestrates two subagents for deep analysis:
+- **`vault-librarian`** — orphan detection, broken links, frontmatter validation, stale notes, index consistency
+- **`cross-linker`** — finds missing wikilinks, orphan notes, broken backlinks
+
+Launch `vault-librarian` first for the structural audit, then `cross-linker` for link quality.
+
 ## Workflow
 
 ### 1. Check Folder Structure
