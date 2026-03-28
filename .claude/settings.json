@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 .claude/scripts/classify-message.py",
+            "command": "bash .claude/scripts/find-python.sh .claude/scripts/classify-message.py",
             "timeout": 10
           }
         ]
@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 .claude/scripts/validate-write.py",
+            "command": "bash .claude/scripts/find-python.sh .claude/scripts/validate-write.py",
             "timeout": 15
           }
         ]
