@@ -115,6 +115,7 @@ QueenBee (蜂后协调器)
 - [[thinking/2026-04-09-Hive-架构评价-快慢思考]] — 外部架构评审：快慢思考系统、三大痛点、蜂巢意识 2.0 建议
 - [[thinking/2026-04-09-Hive-实弹射击-技能复制-第二大脑-还债]] — 下一步行动建议：VortexBee LLM调用、CipherBee技能复制、LibrarianBee、第二大脑、接口还债
 - [[thinking/2026-04-09-Hive-蜂巢进化方向研究]] — 五方向进化路线图、V2.0到V4.0三阶段质变、超级蜂巢愿景
+- [[thinking/2026-04-09-Hive-长程规划-蜂巢进化路线图]] — 🗺️ Q2 2026 到 Q4 2027 五阶段详细规划
 - [[perf/competencies/Async Programming]] — 异步编程证据
 - [[perf/competencies/Performance Engineering]] — 性能工程证据
 
@@ -122,5 +123,11 @@ QueenBee (蜂后协调器)
 
 | Date | Shift | Reason |
 |------|-------|--------|
+| 2026-04-09 | Phase 0 VortexBee Live Link | VortexBee 集成 BrainInterface.consult()，输出从统计数据变为 LLM 重构建议代码块 |
 | 2026-04-09 | Phase 3 完成 | BeeFactory + Async GitHubHarvester + GEP 规模实验 |
 | 2026-04-08 | 迁移到 obsidian-mind | 知识库整合 |
+
+## 技术笔记
+
+### Gitignore 问题 ⚠️
+Hive 仓库的 `.gitignore` 第68行 `*.*` 模式导致所有 `.py` 文件被 git 忽略。Phase 3 的 BeeFactory、Async GitHubHarvester、GEP 规模测试等代码更改未被跟踪。需要修复 `.gitignore` 后重新提交所有代码。
