@@ -112,6 +112,9 @@ QueenBee (蜂后协调器)
 - [[Brag Doc]] — 季度成就记录
 - [[Key Decisions]] — Phase 3 技术决策记录
 - [[perf/competencies/Architecture Design]] — 架构设计证据
+- [[thinking/2026-04-09-Hive-架构评价-快慢思考]] — 外部架构评审：快慢思考系统、三大痛点、蜂巢意识 2.0 建议
+- [[thinking/2026-04-09-Hive-实弹射击-技能复制-第二大脑-还债]] — 下一步行动建议：VortexBee LLM调用、CipherBee技能复制、LibrarianBee、第二大脑、接口还债
+- [[thinking/2026-04-09-Hive-蜂巢进化方向研究]] — 五方向进化路线图、V2.0到V4.0三阶段质变、超级蜂巢愿景
 - [[perf/competencies/Async Programming]] — 异步编程证据
 - [[perf/competencies/Performance Engineering]] — 性能工程证据
 
